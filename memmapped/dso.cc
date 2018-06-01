@@ -53,3 +53,15 @@ extern void GetStringAttrs(Context* ctx, int* size, Attr** a) {
   *size = ctx->size;
   *a = ctx->s;
 }
+
+const char* GetStringAttr(Attr* a) {
+  return reinterpret_cast<const char*>(a->data_);
+}
+
+int* GetIntAttr(Attr* a) {
+  return reinterpret_cast<int*>(a->data_);
+}
+
+float* GetFloatAttr(Attr* a) {
+  return reinterpret_cast<float*>(a->data_);
+}

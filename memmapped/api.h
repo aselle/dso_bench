@@ -10,16 +10,6 @@ typedef struct Attr {
 
 extern void GetStringAttrs(Context*, int*, Attr**);
 
-#define DLL_LOCAL  __attribute__ ((visibility ("hidden")))
-
-DLL_LOCAL const char* GetStringAttr(Attr* a) {
-  return reinterpret_cast<const char*>(a->data_);
-}
-
-DLL_LOCAL int* GetIntAttr(Attr* a) {
-  return reinterpret_cast<int*>(a->data_);
-}
-
-DLL_LOCAL float* GetFloatAttr(Attr* a) {
-  return reinterpret_cast<float*>(a->data_);
-}
+extern const char* GetStringAttr(Attr* a);
+extern int* GetIntAttr(Attr* a);
+extern float* GetFloatAttr(Attr* a);

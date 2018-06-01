@@ -12,9 +12,9 @@ using namespace std;
 int main() {
 
   Context* ctx = InitializeContext(BENCHMARK_SIZE);
+  vector<const char*> string_storage(BENCHMARK_SIZE, "");
 
   cout << "Start benchmarking" <<  endl;
-  vector<const char*> string_storage(BENCHMARK_SIZE, "");
   auto start = chrono::high_resolution_clock::now();
 
 
@@ -31,5 +31,5 @@ int main() {
   cout << " \t Timing  : "
        << chrono::duration <double, nano> (end-start).count() << " ns" << endl;
 
-  return 1;
+  return 0;
 }
